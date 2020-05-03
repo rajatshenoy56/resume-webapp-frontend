@@ -7,7 +7,6 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
@@ -25,7 +24,6 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
