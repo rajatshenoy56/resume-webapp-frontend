@@ -15,7 +15,7 @@ export class AdminpanelComponent implements OnInit {
     this.addForm = this.fromBuilder.group(
       {
        adminEmail:['', Validators.required],
-       Password:['',Validators.required], 
+       adminPassword:['',Validators.required], 
       }
     );
   }
