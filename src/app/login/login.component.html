@@ -3,12 +3,12 @@
     <br>
     <form [formGroup]="Login" novalidate class ="form">
         <div class="form-group">
-            <label for = "adminEmail"><h3>Email</h3></label>
-            <input type="email" formControlName = "adminEmail" placeholder="Enter email" name="adminEmail" class="form-control" />
+            <label for = "userEmail"><h3>Email</h3></label>
+            <input type="email" formControlName = "userEmail" placeholder="Enter email" name="userEmail" class="form-control" />
         </div>
         <div class="form-group">
-            <label for = "adminPassword"><h3>Password</h3></label>
-            <input type="Password" formControlName = "adminPassword" placeholder="Enter Password" name="adminPassword" class="form-control" />
+            <label for = "userPassword"><h3>Password</h3></label>
+            <input type="Password" formControlName = "userPassword" placeholder="Enter Password" name="userPassword" class="form-control" />
         </div>
         <button class = "btn btn-success p-auto" type="submit" (click) = "onSubmit()">
             Save
