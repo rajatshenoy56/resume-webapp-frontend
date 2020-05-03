@@ -13,10 +13,7 @@ export class HeaderComponent implements OnInit {
   faInstagram = faInstagram;
   faGithub = faGithub;
   
-  constructor() {
-    
-    
-  }
+  constructor() {}
 
   ngOnInit() {
   }
