@@ -1,0 +1,36 @@
+fa-icon{
+    padding: 1.2rem;
+    font-size: 3rem;
+}
+
+.container h1{
+    color: #edf5e1 ;
+    padding: 0.4rem;
+}
+
+.container{
+    padding-top: 7.5rem;
+    padding-bottom: 23.5rem;
+}
+
+h1{
+    font-size: 5.5rem;
+}
+
+.container h3{
+    color: #05386b;
+    padding: 0.9rem;
+}
+
+.btn-dark{
+    background-color: #05386b!important;
+    border-color: #05386b!important;
+}
+
+button:hover{
+    color: #5cdb95!important;
+}
+
+fa-icon:hover{
+    color:#edf5e1!important;
+}

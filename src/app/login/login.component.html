@@ -1,0 +1,20 @@
+<div class="container text-center p-5">
+    <h1>Login</h1>
+    <br>
+    <form [formGroup]="Login" novalidate class ="form">
+        <div class="form-group">
+            <label for = "adminEmail"><h3>Email</h3></label>
+            <input type="email" formControlName = "adminEmail" placeholder="Enter email" name="adminEmail" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for = "adminPassword"><h3>Password</h3></label>
+            <input type="Password" formControlName = "adminPassword" placeholder="Enter Password" name="adminPassword" class="form-control" />
+        </div>
+        <button class = "btn btn-success p-auto" type="submit" (click) = "onSubmit()">
+            Save
+        </button>
+        <div></div>
+        <a href="#" routerLink ="../register"><h4>Dont have an account? Signup</h4></a>
+    </form>
+    <br/><br/>
+</div>
