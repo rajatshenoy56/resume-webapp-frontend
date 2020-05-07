@@ -78,7 +78,7 @@ export class AuthenticationService {
 
   public login(user: TokenPayLoad) :Observable<any>{
     const base = this.http.post(
-      `/https://cryptic-savannah-74709.herokuapp.com/api/login`,
+      `https://cryptic-savannah-74709.herokuapp.com/api/login`,
       {email: user.email, password :user.password},
       {
         headers : {'Content-Type': 'application/json'}
