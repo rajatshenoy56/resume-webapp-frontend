@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-resume',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeComponent implements OnInit {
 
-  constructor() { }
+  list_projects: any;
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
+    this.auth.getProjects().subscribe(
+      projects =>{
+        projects.JsonPipe.forEach(ele =>{
+          this.list_projects.push(ele)
+        });
+      }
+    )
   }
 
 }
