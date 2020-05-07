@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { AuthenticationService , TokenPayLoad } from '../services/authentication.service'
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,8 +9,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fromBuilder : FormBuilder) { }
+  constructor(private fromBuilder : FormBuilder, private auth: AuthenticationService, private router : Router) { }
   Login : FormGroup
+
+  credentials: TokenPayLoad = {
+    id:0,
+    name:'',
+    email:'',
+    password:''
+  }
 
   ngOnInit() {
     this.Login = this.fromBuilder.group(
@@ -19,7 +27,15 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-  onSubmit(){
-    console.log(this.Login.value)
+
+  login(){
+    this.auth.login(this.credentials).subscribe(
+      () => {
+        this.router.navigateByUrl('/resume')
+      },
+      err => {
+        console.error(err)
+      }
+    )
   }
 }

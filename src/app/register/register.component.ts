@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
-import { FromEventTarget } from 'rxjs/internal/observable/fromEvent';
+import { AuthenticationService , TokenPayLoad } from '../services/authentication.service'
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,7 +9,13 @@ import { FromEventTarget } from 'rxjs/internal/observable/fromEvent';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private formBuilder : FormBuilder) { }
+  credentials: TokenPayLoad = {
+    id:0,
+    name: '',
+    email: '',
+    password: ''
+  }
+  constructor(private formBuilder : FormBuilder, private auth: AuthenticationService, private router: Router) { }
 
   Register : FormGroup;
 
@@ -21,7 +28,14 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  onSubmit(){
-    console.log(this.Register.value)
+  register(){
+    this.auth.register(this.credentials).subscribe(
+      ()=>{
+        this.router.navigateByUrl('/login')
+      },
+      err =>{
+        console.log(err)
+      }
+    )
   }
 }

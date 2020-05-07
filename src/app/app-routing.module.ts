@@ -4,6 +4,7 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ResumeComponent } from './resume/resume.component';
 
 const routes: Routes = [
   {path: '', pathMatch:'full', redirectTo: 'home'},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'home', component: HeaderComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path : 'resume', component: ResumeComponent},
 ];
 
 @NgModule({

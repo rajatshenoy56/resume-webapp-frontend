@@ -1,16 +1,16 @@
 <div class="container text-center p-5">
     <h1>Login</h1>
     <br>
-    <form [formGroup]="Login" novalidate class ="form">
+    <form [formGroup]="Login" (submit)="login()" class ="form">
         <div class="form-group">
             <label for = "userEmail"><h3>Email</h3></label>
-            <input type="email" formControlName = "userEmail" placeholder="Enter email" name="userEmail" class="form-control" />
+            <input type="email" formControlName = "userEmail" placeholder="Enter email" [(ngModel)]= "credentials.email" name="userEmail" class="form-control" />
         </div>
         <div class="form-group">
             <label for = "userPassword"><h3>Password</h3></label>
-            <input type="Password" formControlName = "userPassword" placeholder="Enter Password" name="userPassword" class="form-control" />
+            <input type="Password" formControlName = "userPassword" placeholder="Enter Password" [(ngModel)]= "credentials.password" name="userPassword" class="form-control" />
         </div>
-        <button class = "btn btn-success p-auto" type="submit" (click) = "onSubmit()">
+        <button class = "btn btn-success p-auto" type="submit">
             Save
         </button>
         <div></div>

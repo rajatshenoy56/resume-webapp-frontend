@@ -1,18 +1,18 @@
 <div class="container text-center p-5">
     <h1>SignUp</h1>
     <br>
-    <form [formGroup]="Register" (ngSubmit)="onSubmit()">
+    <form [formGroup]="Register" (submit)="register()">
         <div class="form-group">
             <label for = "userEmail"><h3>Email</h3></label>
-            <input type="email" formControlName = "userEmail" placeholder="Enter email" name="userEmail" class="form-control" />
+            <input type="email" formControlName = "userEmail" placeholder="Enter email" [(ngModel)] = "credentials.email" name="userEmail" class="form-control" />
         </div>
         <div class="form-group">
             <label for = "userName"><h3>Name</h3></label>
-            <input type="text" formControlName = "userName" placeholder="Enter Name" name="userName" class="form-control" />
+            <input type="text" formControlName = "userName" placeholder="Enter Name" [(ngModel)] = "credentials.name" name="userName" class="form-control" />
         </div>
         <div class="form-group">
             <label for = "userPassword"><h3>Password</h3></label>
-            <input type="Password" formControlName = "userPassword" placeholder="Enter Password" name="userPassword" class="form-control" />
+            <input type="Password" formControlName = "userPassword" placeholder="Enter Password" [(ngModel)] = "credentials.password" name="userPassword" class="form-control" />
         </div>
         <div class="form-group">
             <label for = "userCPassword"><h3>ConfirmPassword</h3></label>
