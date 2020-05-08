@@ -1,5 +1,13 @@
 <div>
     <ul>
+      <li *ngFor="let education of education_list">
+        {{education.year}}
+        {{education.degree}}
+        {{education.college}}
+        {{education.percentage}}
+      </li>
+    </ul>
+    <ul>
         <li *ngFor="let project of list_projects">
           {{ project.id }}
           {{ project.name }}

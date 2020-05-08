@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { JsonPipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
+export interface EducationResponse{
+  education: []
+}
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
@@ -10,8 +16,19 @@ import { JsonPipe } from '@angular/common';
 export class ResumeComponent implements OnInit {
 
   list_projects;
-  constructor(private auth: AuthenticationService) { }
+  education_list;
+  constructor(private auth: AuthenticationService,private http: HttpClient) { }
 
+  getEducation(): Observable<any>{
+    const body = this.http.get(`https://cryptic-savannah-74709.herokuapp.com/api/projects`)
+    const education = body.pipe(
+      map((res: EducationResponse)=>{
+        return res.education
+      })
+    )
+    return education;
+  }
+  
   ngOnInit() {
     this.auth.getProjects().subscribe(
       projects =>{
@@ -19,6 +36,8 @@ export class ResumeComponent implements OnInit {
         this.list_projects = projects
       }
     )
+
+    this.education_list = this.getEducation()
   }
 
 }

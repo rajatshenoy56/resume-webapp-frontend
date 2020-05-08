@@ -109,7 +109,7 @@ export class AuthenticationService {
     this.token = ''
     window.localStorage.removeItem('usertoken')
     this.router.navigateByUrl('/')
-  }
+  } 
 
   public getProjects(): Observable<any>{
     const body = this.http.get(`https://cryptic-savannah-74709.herokuapp.com/api/projects`)
