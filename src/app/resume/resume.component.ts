@@ -16,6 +16,9 @@ export class ResumeComponent implements OnInit {
     this.auth.getProjects().subscribe(
       projects =>{
         console.log(projects)
+        for (const property in projects) {
+          console.log(`${property}: ${projects[property]}`);
+        }
       }
     )
   }
