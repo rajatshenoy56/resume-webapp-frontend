@@ -37,7 +37,12 @@ export class ResumeComponent implements OnInit {
       }
     )
 
-    this.education_list = this.getEducation()
+    this.getEducation().subscribe(
+      education =>{
+        console.log(education)
+        this.education_list = education
+      }
+    )
   }
 
 }
