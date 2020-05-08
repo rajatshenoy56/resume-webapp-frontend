@@ -15,7 +15,7 @@ export class ResumeComponent implements OnInit {
   ngOnInit() {
     this.auth.getProjects().subscribe(
       projects =>{
-          this.list_projects = projects
+        console.log(projects)
       }
     )
   }
