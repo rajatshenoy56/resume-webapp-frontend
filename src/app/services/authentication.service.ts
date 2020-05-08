@@ -16,10 +16,7 @@ export interface UserDetails{
 }
 
 export interface ProjectResponse{
-  id:number
-  name:string
-  type:string
-  description:string
+  projects: []
 }
 interface TokenResponse{
   token: string
@@ -118,7 +115,7 @@ export class AuthenticationService {
     const body = this.http.get(`https://cryptic-savannah-74709.herokuapp.com/api/projects`)
     const project = body.pipe(
       map((res: ProjectResponse)=>{
-        return res
+        return res.projects
       })
     )
     return project;
