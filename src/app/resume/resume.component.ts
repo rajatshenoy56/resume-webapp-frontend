@@ -20,7 +20,7 @@ export class ResumeComponent implements OnInit {
   constructor(private auth: AuthenticationService,private http: HttpClient) { }
 
   getEducation(): Observable<any>{
-    const body = this.http.get(`https://cryptic-savannah-74709.herokuapp.com/api/projects`)
+    const body = this.http.get(`https://cryptic-savannah-74709.herokuapp.com/api/education`)
     const education = body.pipe(
       map((res: EducationResponse)=>{
         return res.education
