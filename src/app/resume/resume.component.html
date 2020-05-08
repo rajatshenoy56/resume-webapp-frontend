@@ -1,7 +1,10 @@
 <div>
     <ul>
         <li *ngFor="let project of list_projects">
-          {{ project }}
+          <li>{{ project.id }}</li>
+          <li>{{ project.name }}</li>
+          <li>{{ project.type }}</li>
+          <li>{{ project.description }}</li>
         </li>
     </ul>
 </div>
