@@ -17,7 +17,6 @@ export class ResumeComponent implements OnInit {
       projects =>{
         console.log(projects)
         this.list_projects = projects
-        console.log(this.list_projects)
       }
     )
   }

@@ -1,6 +1,6 @@
 <div>
     <ul>
-        <li *ngFor="let project of list_projects">
+        <li *ngFor="let project of list_projects|async">
           {{ project.id }}
           {{ project.name }}
           {{ project.type }}
