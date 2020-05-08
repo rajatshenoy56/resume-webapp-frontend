@@ -9,16 +9,15 @@ import { JsonPipe } from '@angular/common';
 })
 export class ResumeComponent implements OnInit {
 
-  list_projects: any;
+  list_projects;
   constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.auth.getProjects().subscribe(
       projects =>{
         console.log(projects)
-        for (const property in projects) {
-          console.log(`${property}: ${projects[property]}`);
-        }
+        this.list_projects = projects
+        console.log(this.list_projects)
       }
     )
   }
