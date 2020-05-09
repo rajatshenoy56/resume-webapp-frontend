@@ -22,18 +22,20 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.Login = this.fromBuilder.group(
       {
-       userEmail:['', Validators.required],
-       userPassword:['',Validators.required], 
+       userEmail:['', Validators.required,],
+       userPassword:['',[Validators.required,Validators.minLength(8)]], 
       }
     );
   }
 
   login(){
+    
     this.auth.login(this.credentials).subscribe(
       () => {
         this.router.navigateByUrl('/resume')
       },
       err => {
+        alert('Wrong Username or Password')
         console.error(err)
       }
     )

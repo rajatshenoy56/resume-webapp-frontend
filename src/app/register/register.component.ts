@@ -23,19 +23,24 @@ export class RegisterComponent implements OnInit {
     this.Register = this.formBuilder.group({
       userName: ['', Validators.required],
       userEmail:['', Validators.required],
-      userPassword:['',Validators.required], 
-      userCPassword: ['',Validators.required],
+      userPassword:['',[Validators.required, Validators.minLength(8)]], 
+      userCPassword: ['',[Validators.required, Validators.minLength(8)]],
     });
   }
 
   register(){
-    this.auth.register(this.credentials).subscribe(
-      ()=>{
-        this.router.navigateByUrl('/login')
-      },
-      err =>{
-        console.log(err)
-      }
-    )
+    if (this.Register.controls['userPassword'].value == this.Register.controls['userCPassword'].value  ) {
+      this.auth.register(this.credentials).subscribe(
+        ()=>{
+          this.router.navigateByUrl('/login')
+        },
+        err =>{
+          console.log(err)
+        }
+      )  
+    }
+    else{
+      alert("Passwords are not similar")
+    }
   }
 }

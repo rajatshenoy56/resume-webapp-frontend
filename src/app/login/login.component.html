@@ -9,9 +9,23 @@
                     <label for = "userEmail"><h3>Email</h3></label>
                     <input type="email" formControlName = "userEmail" placeholder="Enter email" [(ngModel)]= "credentials.email" name="userEmail" class="form-control" />
                 </div>
+                <div *ngIf="Login.controls['userEmail'].invalid && (Login.controls['userEmail'].dirty || Login.controls['userEmail'].touched)"class="alert alert-danger">
+                    <div *ngIf="Login.controls['userEmail'].errors.required">
+                        Email is required.
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for = "userPassword"><h3>Password</h3></label>
                     <input type="Password" formControlName = "userPassword" placeholder="Enter Password" [(ngModel)]= "credentials.password" name="userPassword" class="form-control" />
+                </div>
+                <div *ngIf="Login.controls['userPassword'].invalid && (Login.controls['userPassword'].dirty || Login.controls['userPassword'].touched)"class="alert alert-danger">
+
+                    <div *ngIf="Login.controls['userPassword'].errors.required">
+                        Password is required.
+                    </div>
+                    <div *ngIf="Login.controls['userPassword'].errors.minlength">
+                        Password must be at least 4 characters long.
+                    </div>
                 </div>
                 <button class = "btn btn-success p-auto" type="submit">
                     Save
