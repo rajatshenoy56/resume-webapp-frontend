@@ -1,18 +1,23 @@
-<div class="container text-center p-5">
-    <h1>Signin For Admin</h1>
-    <br>
-    <form [formGroup]="addForm" novalidate class ="form">
-        <div class="form-group">
-            <label for = "adminEmail"><h3>Email</h3></label>
-            <input type="email" formControlName = "adminEmail" placeholder="Enter email of admin" name="adminEmail" class="form-control" />
+<div class="container-fluid text-center p-5">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 col-sm-12">
+            <h1>Signin For Admin</h1>
+            <br>
+            <form [formGroup]="addForm" novalidate class ="form">
+                <div class="form-group">
+                    <label for = "adminEmail"><h3>Email</h3></label>
+                    <input type="email" formControlName = "adminEmail" placeholder="Enter email of admin" name="adminEmail" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for = "adminPassword"><h3>Password</h3></label>
+                    <input type="Password" formControlName = "adminPassword" placeholder="Enter Password of admin" name="adminPassword" class="form-control" />
+                </div>
+                <button class = "btn btn-success px-3 py-2" type="submit" (click) = "onSubmit()">
+                    SignIn
+                </button>
+            </form>
+            <br/><br/>
         </div>
-        <div class="form-group">
-            <label for = "adminPassword"><h3>Password</h3></label>
-            <input type="Password" formControlName = "adminPassword" placeholder="Enter Password of admin" name="adminPassword" class="form-control" />
-        </div>
-        <button class = "btn btn-success" type="submit" (click) = "onSubmit()">
-            Save
-        </button>
-    </form>
-    <br/><br/>
+    </div>
 </div>

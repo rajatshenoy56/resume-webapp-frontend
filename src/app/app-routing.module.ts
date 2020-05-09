@@ -5,13 +5,14 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ResumeComponent } from './resume/resume.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {path: '', pathMatch:'full', redirectTo: 'home'},
-  {path: 'adminpanel', component: AdminpanelComponent},
-  {path: 'home', component: HeaderComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'adminpanel', component: AdminpanelComponent, canActivate:[AuthGuardService]},
+  {path: 'home', component: HeaderComponent, canActivate: [AuthGuardService]},
+  {path: 'login', component: LoginComponent ,canActivate: [AuthGuardService]},
+  {path: 'register', component: RegisterComponent, canActivate:[AuthGuardService]},
   {path : 'resume', component: ResumeComponent},
 ];
 

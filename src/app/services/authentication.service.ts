@@ -15,7 +15,6 @@ export interface UserDetails{
   iat : number
 }
 
-
 interface TokenResponse{
   token: string
 }
@@ -106,7 +105,7 @@ export class AuthenticationService {
   public logout(): void{
     this.token = ''
     window.localStorage.removeItem('usertoken')
-    this.router.navigateByUrl('/')
+    this.router.navigateByUrl('/home')
   } 
 
   

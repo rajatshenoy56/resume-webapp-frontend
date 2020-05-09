@@ -78,6 +78,22 @@ button:hover{
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
+.container-fluid.class4{
+    padding-top: 6.5rem;
+    padding-bottom: 15.5rem;
+}
+
+.container-fluid.class4 h2{ 
+    color:#edf5e1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.container-fluid.class4 h4{ 
+    color:#05386b;
+}
+
 #education{
     color: #edf5e1;
     padding-bottom: 30px;

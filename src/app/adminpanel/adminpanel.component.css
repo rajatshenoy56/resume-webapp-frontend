@@ -1,8 +1,31 @@
-.container h1,h3{
+.container-fluid h1{
     color: #05386b;
+}
+
+.container-fluid h3{
+    color: #379683;
 }
 
 .btn-success{
     background-color: #05386b;
     margin-bottom:300px;
+}
+
+.btn-success:hover{
+    background-color: #379683;
+    color:#05386b;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-fluid{
+        background: #5cdb95;
+    }
+
+}
+
+@media only screen and (min-width: 601px) {
+    .container-fluid{
+        background:url(../../assets/Untitled.png) no-repeat !important;
+        background-size: auto 835px;
+    }  
 }

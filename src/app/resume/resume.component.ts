@@ -22,6 +22,10 @@ export interface projectsResponse{
 export interface appDevResponse{
   appdev: []
 }
+
+export interface workResponse{
+  work:[]
+}
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
@@ -34,7 +38,9 @@ export class ResumeComponent implements OnInit {
   languages_list;
   webdev_list;
   appdev_list;
+  work_list;
   projects_list;
+  
   
   constructor(private http: HttpClient) { }
 
@@ -46,6 +52,12 @@ export class ResumeComponent implements OnInit {
     document.body.appendChild(link);
     link.click();
     link.remove();
+  }
+
+  navigateToClass0(){
+    $('html, body').animate({
+      scrollTop: $(".class0").offset().top
+    }, 1000);
   }
 
   navigateToClass1(){
@@ -122,40 +134,51 @@ export class ResumeComponent implements OnInit {
     return appdev;
   }
 
+  getWork(): Observable<any>{
+    const body = this.http.get(`https://cryptic-savannah-74709.herokuapp.com/api/work`)
+    const work = body.pipe(
+      map((res: workResponse)=>{
+        return res.work
+      })
+    )
+    return work;
+  }
+
   ngOnInit() {
 
     this.getEducation().subscribe(
       education =>{
-        console.log(education)
         this.education_list = education
       }
     )
 
     this.getLanguages().subscribe(
       languages=>{
-        console.log(languages)
         this.languages_list = languages
       }
     )
 
     this.getProjects().subscribe(
       projects =>{
-        console.log(projects)
         this.projects_list = projects
       }
     )
 
     this.getWebDev().subscribe(
       webdev =>{
-        console.log(webdev)
         this.webdev_list = webdev
       }
     )
 
     this.getAppDev().subscribe(
       appdev =>{
-        console.log(appdev)
         this.appdev_list = appdev
+      }
+    )
+
+    this.getWork().subscribe(
+      work =>{
+        this.work_list = work
       }
     )
   }
