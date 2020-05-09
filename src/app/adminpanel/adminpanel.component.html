@@ -4,14 +4,28 @@
         <div class="col-md-6 col-sm-12">
             <h1>Signin For Admin</h1>
             <br>
-            <form [formGroup]="addForm" novalidate class ="form">
+            <form [formGroup]="addForm" class ="form">
                 <div class="form-group">
                     <label for = "adminEmail"><h3>Email</h3></label>
                     <input type="email" formControlName = "adminEmail" placeholder="Enter email of admin" name="adminEmail" class="form-control" />
                 </div>
+                <div *ngIf="addForm.controls['adminEmail'].invalid && (addForm.controls['adminEmail'].dirty || addForm.controls['adminEmail'].touched)"class="alert alert-danger">
+                    <div *ngIf="addForm.controls['adminEmail'].errors.required">
+                        Email is required.
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for = "adminPassword"><h3>Password</h3></label>
                     <input type="Password" formControlName = "adminPassword" placeholder="Enter Password of admin" name="adminPassword" class="form-control" />
+                </div>
+                <div *ngIf="addForm.controls['adminPassword'].invalid && (addForm.controls['adminPassword'].dirty || addForm.controls['adminPassword'].touched)"class="alert alert-danger">
+
+                    <div *ngIf="addForm.controls['adminPassword'].errors.required">
+                        Password is required.
+                    </div>
+                    <div *ngIf="addForm.controls['adminPassword'].errors.minlength">
+                        Password must be at least 4 characters long.
+                    </div>
                 </div>
                 <button class = "btn btn-success px-3 py-2" type="submit" (click) = "onSubmit()">
                     SignIn

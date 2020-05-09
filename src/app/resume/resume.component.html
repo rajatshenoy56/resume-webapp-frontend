@@ -88,7 +88,7 @@
     <div class="col-md-6 col-sm-12">
       <div *ngFor="let education of education_list">
         <h4 style="text-align: left;">{{education.college}}
-          <span style="float:right;">
+          <span>
             <h4>{{education.year}}</h4>
           </span>
         </h4> 
@@ -118,15 +118,15 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-6 col-sm-12">
-      <div *ngFor="let education of education_list">
-        <h4 style="text-align: left;">{{education.college}}
-          <span style="float:right;">
-            <h4>{{education.year}}</h4>
+      <div *ngFor="let work of work_list">
+        <h4 style="text-align: left;">{{work.year}}
+          <span>
+            <h4>{{work.job}}</h4>
           </span>
         </h4> 
-        <h5 class="degree">{{education.degree}}</h5>
+        <h5 style="color: #05386b; text-align: left;">{{work.company}}</h5>
         
-        <h5 class="degree">{{education.percentage}}</h5>
+        <h5 class="degree">{{work.description}}</h5>
         <br>
       </div>
     </div>
@@ -152,7 +152,7 @@
     <div class="col-md-6 col-sm-12">
       <div *ngFor="let project of projects_list">
         <h4 style="text-align: left;">{{project.type}}
-          <span style="float:right;">
+          <span>
             <h4>{{project.name}}</h4>
           </span>
         </h4> 

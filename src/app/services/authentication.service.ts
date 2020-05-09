@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { StringifyOptions } from 'querystring';
 import { tokenReference } from '@angular/compiler';
-
+import { environment } from '../../environments/environment';
 export interface UserDetails{
   id:number
   name:string
@@ -63,6 +63,16 @@ export class AuthenticationService {
     const user = this.getUserDetails()
     if(user){
       return user.exp>Date.now()/1000
+    }
+    else{
+      return false
+    }
+  }
+
+  public isAdmin(): boolean {
+    const user = this.getUserDetails()
+    if(user.email == environment.email){
+      return true
     }
     else{
       return false

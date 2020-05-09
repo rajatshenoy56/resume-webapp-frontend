@@ -10,12 +10,12 @@ export class AdminpanelComponent implements OnInit {
 
   constructor(private fromBuilder : FormBuilder) { }
   addForm : FormGroup
-
+  
   ngOnInit() {
     this.addForm = this.fromBuilder.group(
       {
        adminEmail:['', Validators.required],
-       adminPassword:['',Validators.required], 
+       adminPassword:['',[Validators.required,Validators.minLength(8)]], 
       }
     );
   }
