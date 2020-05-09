@@ -68,21 +68,6 @@ export class AuthenticationService {
     }
   }
 
-  public isAdmin(): boolean {
-    const user = this.getUserDetails()
-    if(user){
-      if(user.email == 'rajatshenoyy@gmail.com'){
-        return true
-      }
-      else{
-        return false
-      }
-    }
-    else{
-      return false
-    }
-  }
-
   public register(user: TokenPayLoad) :Observable<any>{
     console.log(user)
     return this.http.post(`https://cryptic-savannah-74709.herokuapp.com/api/register`,user ,{
@@ -110,6 +95,14 @@ export class AuthenticationService {
     return request
   }
 
+  public isAdmin(){
+    if(localStorage.getItem('email') == 'rajatshenoyy@gmail.com'){
+      return true
+    }
+    else{
+      return false
+    }
+  }
   // public profile(): Observable<any>{
   //   return this.http.get(`https://cryptic-savannah-74709.herokuapp.com/api/profile`,{
   //     headers: {Authorization : `Bearer ${this.getToken()}`}
@@ -119,8 +112,7 @@ export class AuthenticationService {
   public logout(): void{
     this.token = ''
     window.localStorage.removeItem('usertoken')
+    window.localStorage.removeItem('email')
     this.router.navigateByUrl('/home')
   } 
-
-  
 }

@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    
+    localStorage.setItem('email',this.Login.controls['userEmail'].value)
+    console.log(document.cookie)
     this.auth.login(this.credentials).subscribe(
       () => {
         this.router.navigateByUrl('/resume')
@@ -40,4 +41,5 @@ export class LoginComponent implements OnInit {
       }
     )
   }
+
 }
