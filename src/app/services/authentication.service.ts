@@ -71,7 +71,7 @@ export class AuthenticationService {
   public isAdmin(): boolean {
     const user = this.getUserDetails()
     if(user){
-      if(user.email == 'rajatshenoy@gmail.com'){
+      if(user.email == 'rajatshenoyy@gmail.com'){
         return true
       }
       else{
