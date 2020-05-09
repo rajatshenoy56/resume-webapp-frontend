@@ -15,9 +15,7 @@ export interface UserDetails{
   iat : number
 }
 
-export interface ProjectResponse{
-  projects: []
-}
+
 interface TokenResponse{
   token: string
 }
@@ -111,13 +109,5 @@ export class AuthenticationService {
     this.router.navigateByUrl('/')
   } 
 
-  public getProjects(): Observable<any>{
-    const body = this.http.get(`https://cryptic-savannah-74709.herokuapp.com/api/projects`)
-    const project = body.pipe(
-      map((res: ProjectResponse)=>{
-        return res.projects
-      })
-    )
-    return project;
-  }
+  
 }

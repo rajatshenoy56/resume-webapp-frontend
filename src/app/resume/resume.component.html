@@ -1,18 +1,136 @@
-<div>
-    <ul>
-      <li *ngFor="let education of education_list">
-        {{education.year}}
-        {{education.degree}}
-        {{education.college}}
-        {{education.percentage}}
-      </li>
-    </ul>
-    <ul>
-        <li *ngFor="let project of list_projects">
-          {{ project.id }}
-          {{ project.name }}
-          {{ project.type }}
-          {{ project.description }}
-        </li>
-    </ul>
+<div class="container-fluid class0">
+  <div class="row">
+      <div class="col-md-12 text-center">
+          <h1>Rajat Shenoy</h1>
+          <h3>App Developer | Web Developer</h3>
+          <button class="btn btn-dark px-5 py-2" (click)= "navigateToClass1()">About Me</button>
+      </div>
+  </div>
+  <div class="row text-center">
+      <div class="col-md-12 my-3">
+          <a href="https://www.facebook.com/ShenoyRajat"><i class="fab fa-facebook-f" style = "color: #05386b;"></i></a>
+          <a href="https://www.instagram.com/shenoyrajat270/"><i class="fab fa-instagram" style = "color: #05386b;"></i></a>
+          <a href="https://github.com/rajatshenoy56"><i class="fab fa-github" style = "color: #05386b;"></i></a>
+          <a href="https://www.linkedin.com/in/rajat-shenoy-00311a196/"><i class="fab fa-linkedin-in" style = "color: #05386b;"></i></a>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid class1">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h2 id ="about">
+        About
+      </h2>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <h2 id ="about-intro">
+        Hello World! I am a student at Sardar Patel Institute Of Technology.
+      </h2>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <h3>Languages</h3>
+      <div *ngFor="let language of languages_list">
+        <h4>{{language.language}}
+        </h4>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <h3>WebDev</h3>
+      <div *ngFor="let web of webdev_list">
+        <h4>{{web.technologies}}
+        </h4>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <h3>AppDev</h3>
+      <div *ngFor="let app of appdev_list">
+        <h4>{{app.technologies}}
+        </h4>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-12 py-4">
+      <button class="btn btn-dark px-5 py-2">Contact Me</button>
+      <button class="btn btn-dark px-5 py-2 mx-2 my-3" (click) = goTo()>Download CV</button>
+    </div>
+    
+
+    <div class="col-sm-12" >
+      <a (click)= navigateToClass2()>
+      <i class="fas fa-chevron-down" style = "color: #05386b;">
+      </i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid class2">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h3>
+        Resume
+      </h3>
+    </div>
+    <div class="col-md-12">
+      <h2 id ="education">
+        Education
+      </h2>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div *ngFor="let education of education_list">
+        <h4 style="text-align: left;">{{education.college}}
+          <span style="float:right;">
+            <h4>{{education.year}}</h4>
+          </span>
+        </h4> 
+        <h5 class="degree">{{education.degree}}</h5>
+        
+        <h5 class="degree">{{education.percentage}}</h5>
+        <br>
+      </div>
+    </div>
+    <div class="col-sm-12" >
+      <a (click)= navigateToClass3()>
+      <i class="fas fa-chevron-down" style = "color: #05386b;">
+
+      </i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid class3">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h2 >
+        Work Experience
+      </h2>
+    </div>
+    <hr style="color: #05386b;">
+    <hr>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <div *ngFor="let education of education_list">
+        <h4 style="text-align: left;">{{education.college}}
+          <span style="float:right;">
+            <h4>{{education.year}}</h4>
+          </span>
+        </h4> 
+        <h5 class="degree">{{education.degree}}</h5>
+        
+        <h5 class="degree">{{education.percentage}}</h5>
+        <br>
+      </div>
+    </div>
+  </div>
 </div>

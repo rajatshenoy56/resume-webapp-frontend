@@ -3,12 +3,26 @@ i{
     font-size: 3rem;
 }
 
-.container h1{
+@media only screen and (max-width: 600px) {
+    .container-fluid{
+        background: #5cdb95;
+    }
+
+}
+
+@media only screen and (min-width: 601px) {
+    .container-fluid{
+        background:url(../../assets/Untitled.png) no-repeat !important;
+        background-size: auto 835px;
+    }  
+}
+
+.container-fluid h1{
     color: #edf5e1 ;
     padding: 0.4rem;
 }
 
-.container{
+.container-fluid{
     padding-top: 7.5rem;
     padding-bottom: 23.5rem;
 }
@@ -17,7 +31,7 @@ h1{
     font-size: 5.5rem;
 }
 
-.container h3{
+.container-fluid h3{
     color: #05386b;
     padding: 0.9rem;
 }

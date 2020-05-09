@@ -1,0 +1,103 @@
+i{
+    padding: 1.2rem;
+    font-size: 3rem;
+}
+
+h1{
+    font-size: 5.5rem;
+}
+
+i:hover{
+    color:#edf5e1!important;
+}
+
+.btn-dark{
+    background-color: #05386b!important;
+    border-color: #05386b!important;
+}
+
+button:hover{
+    color: #5cdb95!important;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container-fluid{
+        background: #5cdb95;
+    }
+
+}
+
+@media only screen and (min-width: 601px) {
+    .container-fluid{
+        background:url(../../assets/Untitled.png) no-repeat !important;
+        background-size: auto 835px;
+    }  
+}
+
+.container-fluid.class0 h1{
+    color: #edf5e1 ;
+    padding: 0.4rem;
+}
+
+.container-fluid.class0 h3{
+    color: #05386b;
+    padding: 0.9rem;
+}
+
+.container-fluid.class0{
+    padding-top: 7.5rem;
+    padding-bottom: 23.5rem;
+}
+
+.container-fluid.class1{
+    padding-top: 4.5rem;
+    padding-bottom: 15.5rem;
+}
+
+.container-fluid.class1 h3{
+    color: #379683;
+    padding: 1rem;
+}
+.container-fluid.class2{
+    padding-top: 4.5rem;
+    padding-bottom: 15.5rem;
+}
+
+.container-fluid.class2 h3{
+    color: #05386b;
+    padding: 1rem;
+}
+.container-fluid.class3{
+    padding-top: 6.5rem;
+    padding-bottom: 15.5rem;
+}
+
+.container-fluid.class3 h2{ 
+    color:#edf5e1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#education{
+    color: #edf5e1;
+    padding-bottom: 30px;
+}
+
+#about{
+    color:#05386b;
+    padding-bottom: 30px;
+}
+
+#about-intro{
+    color: #edf5e1;
+}
+
+
+.degree{
+    color:#379683;
+    text-align: left;
+}
+
+
+
+
