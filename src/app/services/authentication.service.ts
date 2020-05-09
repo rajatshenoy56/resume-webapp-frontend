@@ -70,8 +70,13 @@ export class AuthenticationService {
 
   public isAdmin(): boolean {
     const user = this.getUserDetails()
-    if(user.email == 'rajatshenoy@gmail.com'){
-      return true
+    if(user){
+      if(user.email == 'rajatshenoy@gmail.com'){
+        return true
+      }
+      else{
+        return false
+      }
     }
     else{
       return false
