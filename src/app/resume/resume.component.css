@@ -37,6 +37,22 @@ button:hover{
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .container-fluid{
+        background: #5cdb95;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .container-fluid.container-fluid.class4{
+        background:url(../../assets/Untitled.png) repeat !important;
+        background-size: auto 835px;
+    }  
+    span{
+        float: right;
+    }
+}
+
 .container-fluid.class0 h1{
     color: #edf5e1 ;
     padding: 0.4rem;

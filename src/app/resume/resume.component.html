@@ -2,7 +2,7 @@
   <div class="row">
       <div class="col-md-12 text-center">
           <h1>Rajat Shenoy</h1>
-          <h3>App Developer | Web Developer</h3>
+          <h3>Django Developer | Python Developer</h3>
           <button class="btn btn-dark px-5 py-2" (click)= "navigateToClass1()">About Me</button>
       </div>
   </div>
@@ -55,7 +55,14 @@
         </h4>
       </div>
     </div>
-    <div class="col-md-3"></div>
+    <div class="col-md-1">
+      <a (click) = "navigateToAdminPanel()" *ngIf="auth.isAdmin()">
+        <i class="fas fa-edit" style="color: #05386b;"></i>
+      </a>
+    </div>
+    <div class="col-md-2">
+
+    </div>
     <div class="col-md-12 py-4">
       <button class="btn btn-dark px-5 py-2">Contact Me</button>
       <button class="btn btn-dark px-5 py-2 mx-2 my-3" (click) = goTo()>Download CV</button>
@@ -124,7 +131,7 @@
             <h4>{{work.job}}</h4>
           </span>
         </h4> 
-        <h5 style="color: #05386b; text-align: left;">{{work.company}}</h5>
+        <h5 style="color: #05386b; text-align: left;" class="py-2">{{work.company}}</h5>
         
         <h5 class="degree">{{work.description}}</h5>
         <br>
@@ -153,10 +160,10 @@
       <div *ngFor="let project of projects_list">
         <h4 style="text-align: left;">{{project.type}}
           <span>
-            <h4>{{project.name}}</h4>
+            <h4 class="py-2">{{project.name}}</h4>
           </span>
         </h4> 
-        <h5 class="degree">{{project.description}}</h5>
+        <h5 class="degree py-2" >{{project.description}}</h5>
         <br>
       </div>
     </div>

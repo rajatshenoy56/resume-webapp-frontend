@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { StringifyOptions } from 'querystring';
-import { tokenReference } from '@angular/compiler';
 export interface UserDetails{
   id:number
   name:string
@@ -18,6 +16,37 @@ interface TokenResponse{
   token: string
 }
 
+export interface LanguageList{
+  id:number
+  language:string
+}
+
+export interface WorkList{
+  year:string
+  job:string
+  company:string
+  description:string
+}
+
+export interface ProjectList{
+  proname:string
+}
+export interface LanguageResponse{
+  language:string,
+  updated_at:string,
+  created_at:string,
+  id:number
+}
+
+export interface WorkResponse{
+  id:number,
+  year:string,
+  job:string,
+  company:string,
+  description:string
+  created_at:string,
+  updated_at:string,
+}
 export interface TokenPayLoad{
   id:number
   name:string
@@ -25,6 +54,14 @@ export interface TokenPayLoad{
   password:string
 }
 
+export interface projectsResponse{
+  id:number,
+  name:string,
+  type:string,
+  description:string,
+  created_at:string,
+  updated_at:string
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -89,6 +126,57 @@ export class AuthenticationService {
         if(data.token){
           this.saveToken(data.token)
         }
+        return data
+      })
+    )
+    return request
+  }
+
+  public addSkills(languagelist: LanguageList) :Observable<any>{
+    const base = this.http.post(
+      `https://cryptic-savannah-74709.herokuapp.com/api/languages`,
+      {id: languagelist.id, language :languagelist.language},
+      {
+        headers : {'Content-Type': 'application/json'}
+      }
+    )
+    console.log(languagelist)
+    const request = base.pipe(
+      map((data:LanguageResponse)=>{
+        return data
+      })
+    )
+    return request
+  }
+
+  public addIntern(worklist: WorkList) :Observable<any>{
+    const base = this.http.post(
+      `https://cryptic-savannah-74709.herokuapp.com/api/work`,
+      {year:worklist.year, job:worklist.job, company:worklist.company, description:worklist.description },
+      {
+        headers : {'Content-Type': 'application/json'}
+      }
+    )
+    console.log(worklist)
+    const request = base.pipe(
+      map((data:WorkResponse)=>{
+        return data
+      })
+    )
+    return request
+  }
+
+  public deleteProject(prolist : ProjectList) :Observable<any>{
+    const base = this.http.post(
+      `https://cryptic-savannah-74709.herokuapp.com/api/projects`,
+      {name: prolist.proname},
+      {
+        headers : {'Content-Type': 'application/json'}
+      }
+    )
+    console.log(prolist)
+    const request = base.pipe(
+      map((data:projectsResponse)=>{
         return data
       })
     )

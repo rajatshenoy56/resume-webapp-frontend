@@ -10,7 +10,7 @@ import { AuthSafetyService } from './services/auth-safety.service';
 
 const routes: Routes = [
   {path: '', pathMatch:'full', redirectTo: 'home'},
-  {path: 'adminpanel', component: AdminpanelComponent, canActivate:[AuthGuardService]},
+  {path: 'adminpanel', component: AdminpanelComponent, canActivate:[AuthSafetyService]},
   {path: 'home', component: HeaderComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent ,canActivate: [AuthGuardService]},
   {path: 'register', component: RegisterComponent, canActivate:[AuthGuardService]},

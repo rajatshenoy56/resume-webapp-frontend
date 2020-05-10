@@ -2,36 +2,95 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6 col-sm-12">
-            <h1>Signin For Admin</h1>
+            <h1>Add Skills</h1>
             <br>
-            <form [formGroup]="addForm" class ="form">
+            <form [formGroup]="addForm" class ="form" (submit) = "addSkills()">
                 <div class="form-group">
-                    <label for = "adminEmail"><h3>Email</h3></label>
-                    <input type="email" formControlName = "adminEmail" placeholder="Enter email of admin" name="adminEmail" class="form-control" />
+                    <label for = "lang"><h3>Languages</h3></label>
+                    <input type="text" formControlName = "lang" [(ngModel)] = "credentials.language" placeholder="Enter the language" name="lang" class="form-control" />
                 </div>
-                <div *ngIf="addForm.controls['adminEmail'].invalid && (addForm.controls['adminEmail'].dirty || addForm.controls['adminEmail'].touched)"class="alert alert-danger">
-                    <div *ngIf="addForm.controls['adminEmail'].errors.required">
-                        Email is required.
+                <div *ngIf="addForm.controls['lang'].invalid && (addForm.controls['lang'].dirty || addForm.controls['lang'].touched)"class="alert alert-danger">
+                    <div *ngIf="addForm.controls['lang'].errors.required">
+                        Language is required.
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for = "adminPassword"><h3>Password</h3></label>
-                    <input type="Password" formControlName = "adminPassword" placeholder="Enter Password of admin" name="adminPassword" class="form-control" />
-                </div>
-                <div *ngIf="addForm.controls['adminPassword'].invalid && (addForm.controls['adminPassword'].dirty || addForm.controls['adminPassword'].touched)"class="alert alert-danger">
-
-                    <div *ngIf="addForm.controls['adminPassword'].errors.required">
-                        Password is required.
-                    </div>
-                    <div *ngIf="addForm.controls['adminPassword'].errors.minlength">
-                        Password must be at least 4 characters long.
-                    </div>
-                </div>
-                <button class = "btn btn-success px-3 py-2" type="submit" (click) = "onSubmit()">
-                    SignIn
+                <button class = "btn btn-success px-3 py-2" type="submit">
+                    Submit
                 </button>
             </form>
             <br/><br/>
         </div>
+        <div class="col-md-3"></div>
+
+        <div class="col-md-3"></div>
+        <div class="col-md-6 col-sm-12">
+            <h1>Edit Work Experience</h1>
+            <br>
+            <form [formGroup]="workForm" class ="form" (submit) = "addIntern()">
+                <div class="form-group">
+                    <label for = "year"><h3>Year</h3></label>
+                    <input type="text" formControlName = "year" [(ngModel)] = "workCredentials.year" placeholder="Enter the year" name="year" class="form-control" />
+                </div>
+                <div *ngIf="workForm.controls['year'].invalid && (workForm.controls['year'].dirty || workForm.controls['year'].touched)"class="alert alert-danger">
+                    <div *ngIf="workForm.controls['year'].errors.required">
+                        Year is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for = "job"><h3>Job</h3></label>
+                    <input type="text" formControlName = "job" [(ngModel)] = "workCredentials.job" placeholder="Enter the job" name="job" class="form-control" />
+                </div>
+                <div *ngIf="workForm.controls['job'].invalid && (workForm.controls['job'].dirty || workForm.controls['job'].touched)"class="alert alert-danger">
+                    <div *ngIf="workForm.controls['job'].errors.required">
+                        Job is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for = "company"><h3>Company</h3></label>
+                    <input type="text" formControlName = "company" [(ngModel)] = "workCredentials.company" placeholder="Enter the company" name="company" class="form-control" />
+                </div>
+                <div *ngIf="workForm.controls['company'].invalid && (workForm.controls['company'].dirty || workForm.controls['company'].touched)"class="alert alert-danger">
+                    <div *ngIf="workForm.controls['company'].errors.required">
+                        Company is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for = "description"><h3>Description</h3></label>
+                    <input type="text" formControlName = "description" [(ngModel)] = "workCredentials.description" placeholder="Enter the description" name="description" class="form-control" />
+                </div>
+                <div *ngIf="workForm.controls['description'].invalid && (workForm.controls['description'].dirty || workForm.controls['description'].touched)"class="alert alert-danger">
+                    <div *ngIf="workForm.controls['description'].errors.required">
+                        Description is required.
+                    </div>
+                </div>
+                <button class = "btn btn-success px-3 py-2" type="submit">
+                    Submit
+                </button>
+            </form>
+            <br/><br/>
+        </div>
+        <div class="col-md-3"></div>
+
+        <div class="col-md-3"></div>
+        <div class="col-md-6 col-sm-12">
+            <h1>Delete Project</h1>
+            <br>
+            <form [formGroup]="deleteForm" class ="form" (submit) = "deleteProject()">
+                <div class="form-group">
+                    <label for = "proname"><h3>Project Name</h3></label>
+                    <input type="text" formControlName = "proname" [(ngModel)] = "projectCredentials.proname" placeholder="Enter the project name" name="proname" class="form-control" />
+                </div>
+                <div *ngIf="deleteForm.controls['proname'].invalid && (deleteForm.controls['proname'].dirty || deleteForm.controls['proname'].touched)"class="alert alert-danger">
+                    <div *ngIf="deleteForm.controls['proname'].errors.required">
+                        Project Name is required.
+                    </div>
+                </div>
+                <button class = "btn btn-success px-3 py-2" type="submit">
+                    Submit
+                </button>
+            </form>
+            <br/><br/>
+        </div>
+        <div class="col-md-3"></div>
     </div>
 </div>

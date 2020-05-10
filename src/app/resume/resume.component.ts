@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service'
+import { Router } from '@angular/router'
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -42,7 +44,7 @@ export class ResumeComponent implements OnInit {
   projects_list;
   
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: AuthenticationService, private router: Router) { }
 
   goTo(){
     const link = document.createElement('a');
@@ -142,6 +144,10 @@ export class ResumeComponent implements OnInit {
       })
     )
     return work;
+  }
+
+  navigateToAdminPanel(){
+    this.router.navigateByUrl('/adminpanel')
   }
 
   ngOnInit() {
